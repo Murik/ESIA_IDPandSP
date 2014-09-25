@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Shiboleth/ant-extensions/ant-extensions.iml" filepath="$PROJECT_DIR$/Shiboleth/ant-extensions/ant-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/idp-web/idp-web.iml" filepath="$PROJECT_DIR$/idp-web/idp-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/newIDPandSP.iml" filepath="$PROJECT_DIR$/.idea/newIDPandSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oiosaml.java-11442/oiosaml-sp.iml" filepath="$PROJECT_DIR$/oiosaml.java-11442/oiosaml-sp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider/shibboleth-identityprovider.iml" filepath="$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider/shibboleth-identityprovider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shiboleth/shibboleth-parent/shibboleth-parent.iml" filepath="$PROJECT_DIR$/Shiboleth/shibboleth-parent/shibboleth-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sp-test/sp-web.iml" filepath="$PROJECT_DIR$/sp-test/sp-web.iml" />
+    </modules>
+  </component>
+</project>
+

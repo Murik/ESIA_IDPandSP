@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<antlib>
+    <taskdef name="xinput" classname="edu.internet2.middleware.ant.input.XInput" />
+    <typedef name="xoption" classname="edu.internet2.middleware.ant.input.XInputOption" />
+    
+    <taskdef name="selfSignedCert" classname="edu.internet2.middleware.ant.pki.SelfSignedCertificate" />
+    
+    <taskdef name="pathToAbsolutePath" classname="edu.internet2.middleware.ant.util.PathToAbsolutePath" />
+    <taskdef name="pathToUrl" classname="edu.internet2.middleware.ant.util.PathToUrl" />
+    <taskdef name="regexSplit" classname="edu.internet2.middleware.ant.util.RegexSplit" />
+    <taskdef name="stringFromFile" classname="edu.internet2.middleware.ant.util.StringFromFile" />
+</antlib>

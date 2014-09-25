@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    
+    <id>bin</id>
+    <formats>
+        <format>tar.gz</format>
+        <format>zip</format>
+    </formats>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+            <directoryMode>774</directoryMode>
+            <fileMode>444</fileMode>
+            <scope>compile</scope>
+            <excludes>
+                <exclude>javax.servlet:*</exclude>
+                <exclude>javax.servlet.jsp:*</exclude>
+            </excludes>
+            <includes>
+                <include>*:jar:*</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+            <directoryMode>774</directoryMode>
+            <fileMode>444</fileMode>
+            <scope>provided</scope>
+            <includes>
+                <include>javax.servlet:servlet-api</include>
+                <include>javax.servlet.jsp:jsp-api</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>src/installer/lib</outputDirectory>
+            <directoryMode>774</directoryMode>
+            <fileMode>444</fileMode>
+            <scope>runtime</scope>
+            <includes>
+                <include>org.apache.ant:*</include>
+                <include>ant-contrib:*</include>
+                <include>net.shibboleth.tool:ant-extensions:*</include>
+                <include>org.bouncycastle:*</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/endorsed</outputDirectory>
+            <directoryMode>774</directoryMode>
+            <fileMode>444</fileMode>
+            <scope>runtime</scope>
+            <includes>
+                <include>org.apache.xerces:*</include>
+                <include>xalan:*</include>
+                <include>xml-resolver:*</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+
+    <fileSets>
+        <!-- Copy up our installer srcipts into the root of the package -->
+        <fileSet>
+            <directory>src/installer/bash</directory>
+            <outputDirectory />
+            <includes>
+                <include>*.sh</include>
+            </includes>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/installer/bat</directory>
+            <outputDirectory />
+            <includes>
+                <include>*.bat</include>
+            </includes>
+        </fileSet>
+
+        <!-- Keep our various resource files in the package -->
+        <fileSet>
+            <directory>src/installer/resources</directory>
+            <outputDirectory>/src/installer/resources</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/webapp</directory>
+            <outputDirectory>/src/main/webapp</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/tools</directory>
+            <outputDirectory>src/tools</outputDirectory>
+        </fileSet>
+
+        <!-- Documentation -->
+        <fileSet>
+            <includes>
+                <include>RELEASE-NOTES*</include>
+                <include>LICENSE*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>doc/</directory>
+            <outputDirectory>/doc</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+</assembly>

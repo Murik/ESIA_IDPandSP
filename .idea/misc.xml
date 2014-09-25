@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/idp-web" />
+    <file type="web" url="file://$PROJECT_DIR$/sp-test" />
+  </component>
+  <component name="IdProvider" IDEtalkID="753A5B0810B04156DB92BFD25E013ED4" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/idp-web/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Shiboleth/ant-extensions/pom.xml" />
+        <option value="$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider/pom.xml" />
+        <option value="$PROJECT_DIR$/Shiboleth/shibboleth-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/oiosaml.java-11442/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
+</project>
+
