@@ -260,11 +260,16 @@ public class SLOProfileHandler extends AbstractSAML2ProfileHandler {
             Session indexedSession = sessionManager.getSession(nameIDIndex);
             
             Status status = null;
-            
+	        Session activeSession = getUserSession(inTransport);
             if (indexedSession == null) {
                 // No session matched.
                 log.info("LogoutRequest did not reference an active session.");
-                status = buildStatus(StatusCode.REQUESTER_URI, StatusCode.UNKNOWN_PRINCIPAL_URI, null);
+//                status = buildStatus(StatusCode.REQUESTER_URI, StatusCode.UNKNOWN_PRINCIPAL_URI, null);
+
+	            //Already Logout
+	            //todo
+	            status = buildStatus(StatusCode.SUCCESS_URI, null, null);
+
             } else if (!indexedSession.getServicesInformation().keySet().contains(
                     requestContext.getInboundMessageIssuer())) {
                 // Session matched, but it's not associated with the requesting SP.
@@ -281,7 +286,6 @@ public class SLOProfileHandler extends AbstractSAML2ProfileHandler {
                 }
             } else {
                 // Get active session and compare it to the matched one.
-                Session activeSession = getUserSession(inTransport);
                 if (activeSession == null ||
                         DatatypeHelper.safeEquals(activeSession.getSessionID(), indexedSession.getSessionID())) {
                     // If there are other service records attached, then it's a partial logout.
@@ -292,9 +296,13 @@ public class SLOProfileHandler extends AbstractSAML2ProfileHandler {
                     }
                 } else {
                     // Session found, but it's not the same as the active session.
-                    indexedSession = null;
+//                    indexedSession = null;
                     log.warn("LogoutRequest referenced a session other than the client's current one.");
-                    status = buildStatus(StatusCode.REQUESTER_URI, StatusCode.UNKNOWN_PRINCIPAL_URI, null);
+//                    status = buildStatus(StatusCode.REQUESTER_URI, StatusCode.UNKNOWN_PRINCIPAL_URI, null);
+	                //Another Stend
+	                //todo
+	                status = buildStatus(StatusCode.SUCCESS_URI, null, null);
+
                 }
             }
             
@@ -324,10 +332,23 @@ public class SLOProfileHandler extends AbstractSAML2ProfileHandler {
             }
             
             if (status.getStatusCode().getValue().equals(StatusCode.SUCCESS_URI)) {
-                log.info("Invalidating session identified by LogoutRequest: {}", indexedSession.getSessionID());
+	            //Logout from jboss Session
+	            //todo
 	            HttpServletRequest request = ((HttpServletRequestAdapter) inTransport).getWrappedRequest();
 	            request.getSession().invalidate();
-                destroySession(indexedSession);
+	            //End Logout
+	            if (indexedSession != null) {
+		            log.info("Invalidating session identified by LogoutRequest: {}", indexedSession.getSessionID());
+		            destroySession(indexedSession);
+	            }
+	            if (activeSession != null) {
+		            if (indexedSession == null || !DatatypeHelper.safeEquals(activeSession.getSessionID(), indexedSession.getSessionID())) {
+			            log.info("Invalidating session identified from client request: {}", activeSession.getSessionID());
+			            destroySession(activeSession);
+		            }
+	            } else {
+		            log.info("No session to invalidate from client request.");
+	            }
                 samlResponse = buildLogoutResponse(requestContext, status);
             } else {
                 requestContext.setFailureStatus(status);

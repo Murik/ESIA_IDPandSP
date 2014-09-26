@@ -978,6 +978,7 @@ public abstract class AbstractSAML2ProfileHandler extends AbstractSAMLProfileHan
         b.append(nameIdentifier.getValue());
         b.append("|");
         b.append(nameIdentifier.getFormat());
+	    //2.4.1 And 2.6 opensaml Logout merging
 //        if (nameIdentifier.getNameQualifier() != null || nameIdentifier.getSPNameQualifier() != null) {
 //            b.append("|");
 //            b.append(nameIdentifier.getNameQualifier());
