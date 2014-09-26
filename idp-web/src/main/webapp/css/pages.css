@@ -1,0 +1,248 @@
+/*
+                common
+*/
+.header .login-info {
+    top: 4px;
+}
+/* cover */
+.simple-cover {
+    padding: 2em 2.5em 2.5em;
+}
+.simple-cover .page-title {
+    margin: 0;
+    padding: 0 0 0.5em;
+}
+.authn-cover {
+    overflow: hidden;
+    padding: 1.2em;
+}
+/* title */
+.column-left h1.page-title,
+.column-right h1.page-title {
+    font-size: 2em;
+}
+
+
+/*
+                Page - authentication
+*/
+/*              column right                */
+.column-right {
+    float: right;
+    padding: 1em 1.5em 2.5em;
+    position: relative;
+    width: 395px;
+    z-index: 2;
+}
+.column-right h1.page-title .goto-reg {
+    position: relative;
+    top: 8px;
+    border-bottom: 1px dashed #004990;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 14px;
+    line-height: 1.1em;
+    text-decoration: none;
+}
+
+/*              column left             */
+.column-left {
+    padding: 1em 500px 2.5em 1.5em;
+}
+
+/*              form                */
+.data-form-authn {
+    padding-bottom: 40px;
+}
+.data-form-authn dl {
+    padding-bottom: 20px;
+}
+.data-form-authn dl input {
+    width: 385px;
+}
+
+/* login */
+.data-form-authn dl.login dt label {
+    border-bottom: 1px dashed #004990;
+    color: #004990;
+    cursor: pointer;
+    line-height: 16px;
+    margin-right: 8px;
+}
+.data-form-authn dl.login dt label.active {
+    border-bottom-color: transparent;
+    color: #505961;
+    cursor: default;
+}
+/*.data-form-authn dl.login dd.item.phone,
+.data-form-authn dl.login dd.item.email {
+    display: none;
+}*/
+.data-form-authn dl.login #phone {
+    background-image: url("../img/theme/primefaces/sprite_icon_flag.png");
+    background-position: 6px top;
+    background-repeat: no-repeat;
+    text-indent: 28px;
+}
+
+/* checkbox */
+.data-form-authn .check-list {
+    margin-left: 6px;
+}
+
+/* button */
+.data-form-authn dl.button-authn {
+    padding-top: 10px;
+}
+.data-form-authn dl.button-authn .button-big {
+    width: 100%;
+}
+
+/* link */
+.data-form-authn .fail-login {
+    margin-left: 6px;
+}
+
+/*              only ds             */
+.authn-cover .text-only-ds {
+    font-size: 1.1em;
+    padding-bottom: 40px;
+}
+
+/*              alternative             */
+.login-alternative {
+    background: #f0f6fc;
+    border: 1px solid #dde8f3;
+    border-radius: 5px;
+    padding: 20px 0 20px 20px;
+}
+.login-alternative h5 {
+    border: none;
+}
+.login-alternative .login-list {
+    list-style: none;
+}
+.login-alternative .login-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 110px;
+}
+.login-alternative .login-list a {
+    display: inline-block;
+    font-size: 14px;
+    height: 70px;
+    line-height: 70px;
+}
+.login-alternative .login-list .login-sim a {
+    height: 50px;
+    line-height: normal;
+    padding-top: 19px;
+}
+body.en .login-alternative .login-list .login-sim a,
+body.de .login-alternative .login-list .login-sim a,
+body.fr .login-alternative .login-list .login-sim a {
+    height: 70px;
+    line-height: 70px;
+    padding-top: 0;
+}
+.login-alternative .login-list .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+    display: block;
+    height: 70px;
+    width: 90px;
+}
+.login-alternative .login-list .icon.uec {
+    background-image: url("../img/pages/login_uec.png");
+}
+.login-alternative .login-list .icon.eds {
+    background-image: url("../img/pages/login_eds.png");
+}
+.login-alternative .login-list .icon.carp {
+    background-image: url("../img/pages/login_carp.png");
+}
+.login-alternative .login-list .icon.kep {
+    top: 7px;
+    background-image: url("../img/pages/login_kep.png");
+    height: 56px;
+}
+.login-alternative .login-list .icon.sim {
+    background-image: url("../img/pages/login_sim.png");
+}
+
+
+/*
+                Page - OTP Authentication
+*/
+/* show/hide messages */
+.info-wrap-code {
+    margin-bottom: 25px;
+}
+.info-wrap-code p {
+    padding-bottom: 5px;
+}
+.data-form-code .code input.hidden {
+    display: none;
+}
+.data-form-code dl.line-btns {
+    padding-top: 10px !important;
+}
+
+
+/*
+                EDS dialog
+*/
+.eds-message.bg-eds {
+    background-image: url("../img/pages/bg_eds.png");
+}
+
+
+/*
+                Role
+*/
+/**/
+
+
+/*
+                sloQuestion
+*/
+.data-form-sloquestion dt {
+    margin-left: 0;
+}
+.data-form-sloquestion .question {
+    font-size: 14px;
+    padding: 10px 0;
+}
+.data-form-sloquestion .buttons-group form {
+    display: inline-block;
+}
+
+
+/*
+                Smart SSO
+*/
+.smart-sso-message {
+    font-size: 1.1em;
+    line-height: normal;
+    padding-bottom: 15px;
+}
+.smart-sso-message p {
+    padding-bottom: 5px;
+}
+.smart-sso-message ul.list {
+    margin: 0;
+    padding: 10px 0 10px 4px;
+}
+.smart-sso-message ul.list li {
+    line-height: 16px;
+}
+.smart-sso-roles {
+    margin-bottom: 25px;
+}

@@ -13,8 +13,8 @@
         same named beans in previous files. -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>file:/home/jboss/development/idp/conf/internal.xml;
-            file:/home/jboss/development/idp/conf/service.xml;
+        <param-value>file:/home/jboss/idp/conf/internal.xml;
+            file:/home/jboss/idp/conf/service.xml;
         </param-value>
     </context-param>
 
@@ -145,12 +145,12 @@
 
     <error-page>
         <error-code>500</error-code>
-        <location>/error.jsp</location>
+        <location>/error.html</location>
     </error-page>
 
     <error-page>
         <error-code>404</error-code>
-        <location>/error-404.jsp</location>
+        <location>/404.html</location>
     </error-page>
 
     <!-- Uncomment to use container managed authentication -->
@@ -165,15 +165,32 @@
             <http-method>POST</http-method>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>USER</role-name>
+            <role-name>CITIZEN</role-name>
+            <role-name>ADMIN</role-name>
+            <role-name>ADDITIONAL_ADMIN</role-name>
+            <role-name>AUTHORIZED_SPECIALIST</role-name>
+            <role-name>HEAD_OF_GENERAL_MEETING_OF_FLAT_OWNERS_IN_HOUSE</role-name>
         </auth-constraint>
         <!--<user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>-->
     </security-constraint>
     <security-role>
-        <role-name>USER</role-name>
+        <role-name>CITIZEN</role-name>
     </security-role>
+    <security-role>
+        <role-name>ADMIN</role-name>
+    </security-role>
+    <security-role>
+        <role-name>ADDITIONAL_ADMIN</role-name>
+    </security-role>
+    <security-role>
+        <role-name>AUTHORIZED_SPECIALIST</role-name>
+    </security-role>
+    <security-role>
+        <role-name>HEAD_OF_GENERAL_MEETING_OF_FLAT_OWNERS_IN_HOUSE</role-name>
+    </security-role>
+
 
     <!-- Uncomment if you want BASIC auth managed by the container -->
     <!--<login-config> <auth-method>BASIC</auth-method> <realm-name>IdP Password Authentication</realm-name> </login-config>-->
@@ -183,8 +200,8 @@
         <auth-method>FORM</auth-method>
         <realm-name>IdP Password Authentication</realm-name>
         <form-login-config>
-            <form-login-page>/login.jsp</form-login-page>
-            <form-error-page>/login-error.jsp</form-error-page>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/login-error.html</form-error-page>
         </form-login-config>
     </login-config>
 

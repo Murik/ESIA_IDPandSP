@@ -5,7 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/idp-web" />
-    <file type="web" url="file://$PROJECT_DIR$/sp-test" />
+    <file type="web" url="file://$PROJECT_DIR$/sp-web" />
   </component>
   <component name="IdProvider" IDEtalkID="753A5B0810B04156DB92BFD25E013ED4" />
   <component name="MavenProjectsManager">
@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider/pom.xml" />
         <option value="$PROJECT_DIR$/Shiboleth/shibboleth-parent/pom.xml" />
         <option value="$PROJECT_DIR$/oiosaml.java-11442/pom.xml" />
+        <option value="$PROJECT_DIR$/sp-web/pom.xml" />
       </list>
     </option>
   </component>

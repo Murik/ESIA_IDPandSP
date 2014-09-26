@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://sp.hcs-dev.ru:10080"
+                     xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:esia="urn:esia:shibboleth:2.0:mdext"
+                     xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+    <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true"
+                        protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIICHzCCAYigAwIBAgIGAUaAqdbpMA0GCSqGSIb3DQEBBQUAMCoxEzARBgNVBAoMCmtleW1hbmFn
+                        ZXIxEzARBgNVBAsMCm9pb3NhbWwtc3AwHhcNMTQwNjA5MTI0NTUyWhcNMjQwNjA2MTI0NTUyWjA4
+                        MSEwHwYDVQQDDBhodHRwOi8vc2FtbC5oY3MubGFuaXQucnUxEzARBgNVBAsMCm9pb3NhbWwtc3Aw
+                        gZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIhWk+sENBrqG0LT4SxKdN+CnWvIEIizmcdwFbin
+                        zxA9hPmjW07avBcQOnnML5JG1X2UgBWaHtHyhcE9Ba1ASq01ssO2rJ3rn8FsXf9omIFKn45MZOMy
+                        Hi04PRSmaEDLZNO97IBhtNjg2GofGK99y8ZMg8fTxY7G2KLUIWSlf0YHAgMBAAGjQjBAMB0GA1Ud
+                        DgQWBBTeLYdsjFbBLqEdWERAlvWj/o4a5TAfBgNVHSMEGDAWgBTeLYdsjFbBLqEdWERAlvWj/o4a
+                        5TANBgkqhkiG9w0BAQUFAAOBgQB1o4TLMSRIMVw2khsU1r9eBLBKwwUmivX+mcHQyvQrw09HIA6w
+                        Jvk35wD0RO5MbQafTE667QytRUz1t6LK5O0tVUCcmPL4MiVXuiKb+9OgNZji2PDFKEY1zwWsNLdk
+                        G6K59bjrR6ArYejNSk0r4+sLB3L3WNsbddU5FAUBmSjhvg==
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:KeyDescriptor use="encryption">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIICHzCCAYigAwIBAgIGAUaAqdbpMA0GCSqGSIb3DQEBBQUAMCoxEzARBgNVBAoMCmtleW1hbmFn
+                        ZXIxEzARBgNVBAsMCm9pb3NhbWwtc3AwHhcNMTQwNjA5MTI0NTUyWhcNMjQwNjA2MTI0NTUyWjA4
+                        MSEwHwYDVQQDDBhodHRwOi8vc2FtbC5oY3MubGFuaXQucnUxEzARBgNVBAsMCm9pb3NhbWwtc3Aw
+                        gZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIhWk+sENBrqG0LT4SxKdN+CnWvIEIizmcdwFbin
+                        zxA9hPmjW07avBcQOnnML5JG1X2UgBWaHtHyhcE9Ba1ASq01ssO2rJ3rn8FsXf9omIFKn45MZOMy
+                        Hi04PRSmaEDLZNO97IBhtNjg2GofGK99y8ZMg8fTxY7G2KLUIWSlf0YHAgMBAAGjQjBAMB0GA1Ud
+                        DgQWBBTeLYdsjFbBLqEdWERAlvWj/o4a5TAfBgNVHSMEGDAWgBTeLYdsjFbBLqEdWERAlvWj/o4a
+                        5TANBgkqhkiG9w0BAQUFAAOBgQB1o4TLMSRIMVw2khsU1r9eBLBKwwUmivX+mcHQyvQrw09HIA6w
+                        Jvk35wD0RO5MbQafTE667QytRUz1t6LK5O0tVUCcmPL4MiVXuiKb+9OgNZji2PDFKEY1zwWsNLdk
+                        G6K59bjrR6ArYejNSk0r4+sLB3L3WNsbddU5FAUBmSjhvg==
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                                Location="http://sp.hcs-dev.ru:10080/sp-web/saml/LogoutServiceHTTPRedirect"
+                                ResponseLocation="http://sp.hcs-dev.ru:10080/sp-web/saml/LogoutServiceHTTPRedirectResponse"/>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                     Location="http://sp.hcs-dev.ru:10080/sp-web/saml/SAMLAssertionConsumer" index="0"
+                                     isDefault="true"/>
+    </md:SPSSODescriptor>
+    <md:AttributeAuthorityDescriptor
+            protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+        <saml:Attribute NameFormat="urn:mace:shibboleth:1.0:nameIdentifier"
+                        Name="transientId"><!--Сессионый идентификатор запроса сервис провайдера-->
+        </saml:Attribute>
+
+
+        <saml:Attribute NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="authToken" Name="urn:mace:dir:attribute:authToken">
+        </saml:Attribute>
+        <!--Идентификатор сессии пользователя в системе ЕСИА-->
+        <saml:Attribute Name="urn:mace:dir:attribute:userId"
+                        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" friendlyName="userId"
+                        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Уникальный
+                    идентификатор пользователя в рамках поставщика идентификации -->
+        <saml:Attribute Name="urn:esia:authnMethod" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="authnMethod" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Метод аутентификации
+                    с помощью которого пользователь прошел аутентификацию -->
+        <saml:Attribute Name="urn:mace:dir:attribute:firstName"
+                        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" friendlyName="firstName"
+                        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Имя пользователя -->
+        <saml:Attribute Name="urn:esia:globalRole" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="globalRole" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Роль под которой аутентифицировался пользователь -->
+        <saml:Attribute Name="urn:mace:dir:attribute:lastName"
+                        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" friendlyName="lastName"
+                        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Фамилия пользователя -->
+        <saml:Attribute Name="urn:mace:dir:attribute:middleName"
+                        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" friendlyName="middleName"
+                        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Отчество пользователя -->
+        <saml:Attribute Name="urn:esia:memberOfGroups" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="memberOfGroups" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Принадлежность пользователя
+                    к группам доступа ИС -->
+        <saml:Attribute Name="urn:esia:orgAddresses" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgAddresses" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Адреса организации пользователя -->
+        <saml:Attribute Name="urn:esia:orgContacts" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgContacts" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Контакты организации -->
+        <saml:Attribute Name="urn:esia:orgOid" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgOid" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Идентификатор организации -->
+        <saml:Attribute Name="urn:esia:orgKPP" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgKPP" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--КПП организации пользователя -->
+        <saml:Attribute Name="urn:esia:orgLegalForm" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgLegalForm" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Организационно-правовая форма организации -->
+        <saml:Attribute Name="urn:esia:orgINN" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgINN" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--ИНН организации пользователя -->
+        <saml:Attribute Name="urn:esia:orgName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgName" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Имя организации пользователя -->
+        <saml:Attribute Name="urn:esia:orgShortName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgShortName" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Сокращенное имя организации пользователя -->
+        <saml:Attribute Name="urn:esia:orgOGRN" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgOGRN" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--ОГРН организации пользователя -->
+        <saml:Attribute Name="urn:esia:orgPosition" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgPosition" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Должность пользователя в организации -->
+        <saml:Attribute Name="urn:esia:orgType" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="orgType" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Тип организации пользователя -->
+        <saml:Attribute Name="urn:esia:personOGRN" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="personOGRN" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--ОГРНИП пользователя -->
+        <saml:Attribute Name="urn:esia:personEMail" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="personEMail" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Электронный адрес пользователя -->
+        <saml:Attribute Name="urn:esia:userName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                        friendlyName="userName" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <!--Логин пользователя -->
+
+    </md:AttributeAuthorityDescriptor>
+    <md:Organization>
+        <md:OrganizationName xml:lang="ru">Министерство связи и массовых раздолбайств Российской Федерации
+        </md:OrganizationName>
+        <md:OrganizationDisplayName xml:lang="ru">Минкомтест России</md:OrganizationDisplayName>
+        <md:OrganizationURL xml:lang="en">http://mintest.ru/ru/</md:OrganizationURL>
+    </md:Organization>
+    <md:ContactPerson contactType="technical">
+        <md:Company>ЗАО «Рога и копыта»</md:Company>
+        <md:EmailAddress>test@yandex.ru</md:EmailAddress>
+    </md:ContactPerson>
+
+    <!--*********-->
+    <!--EXTENSIONS-->
+    <!--*********-->
+    <md:Extensions>
+        <esia:SupportedGlobalRoles>
+            <esia:GlobalRole ID="P"></esia:GlobalRole>
+            <!-- Физическое лицо -->
+            <esia:GlobalRole ID="E"> <!-- Должностное лицо организации -->
+                <esia:SupportedOrgTypes>
+                    <esia:OrgType ID="L"/>
+                    <!-- Юридическое лицо -->
+                    <esia:OrgType ID="B"/>
+                    <!-- Индивидуальный предприниматель-->
+                    <esia:OrgType ID="A"/>
+                    <!-- Орган исполнительной власти -->
+                </esia:SupportedOrgTypes>
+            </esia:GlobalRole>
+        </esia:SupportedGlobalRoles>
+        <esia:SupportedAuthnMethods>
+            <esia:AuthnMethod ID="PWD"/>
+            <!-- Авторизация по паролю -->
+            <esia:AuthnMethod ID="DS"/>
+            <!-- Авторизация по КЭП -->
+        </esia:SupportedAuthnMethods>
+        <esia:SupportedAccTypes>
+            <esia:AccType ID="T"/>
+            <!-- Авторизация только подтвержденных УЗ -->
+        </esia:SupportedAccTypes>
+    </md:Extensions>
+</md:EntityDescriptor>

@@ -38,7 +38,7 @@ import javax.naming.NamingException;
 public class SystemConfiguration{
 
 	/**
-	 * Returns home dir as set in web.xml
+	 * Returns home dir as set in JNDI Jboss.
 	 * @return path to home dir or null if not defined
 	 */
 	public static String getHomeDirByJNDI(){

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="sp-web:war">
-    <output-path>$PROJECT_DIR$/sp-test/target</output-path>
+    <output-path>$PROJECT_DIR$/sp-web/target</output-path>
     <root id="archive" name="sp-web.war">
       <element id="artifact" artifact-name="sp-web:war exploded" />
     </root>

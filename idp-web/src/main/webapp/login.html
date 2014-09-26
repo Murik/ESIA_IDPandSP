@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="icon" type="image/png" href="../img/russia-flag.png">
+
+    <link type="text/css" rel="stylesheet" href="../css/theme.css">
+    <link type="text/css" rel="stylesheet" href="../css/base-page.css">
+    <link type="text/css" rel="stylesheet" href="../css/base-components.css">
+    <link type="text/css" rel="stylesheet" href="../css/pages.css">
+    <link type="text/css" rel="stylesheet" href="../css/eds.css">
+    <link type="text/css" rel="stylesheet" href="../css/lleo.css">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <!--<link rel="stylesheet" href="css/main.css">-->
+
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="../js/knockout.min.js"></script>
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/authn.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/ds-widget.js"></script>
+    <script type="text/javascript" src="../js/noinfomat.js"></script>
+
+
+    <script type="text/javascript">
+        var jsonLocalizationMsg = {"authn": {"authn": {"button": {"login": "Войти"}, "checkbox": {"remember": {"id": "Запомнить меня"}}, "href": {"info": "Подробнее...", "login": {"eds": "Средства электронной подписи", "kep": "Карты электронного правительства", "sim": "Средства мобильной электронной подписи", "uec": "Универсальной электронной карты"}, "recovery": "Не удается войти?", "registration": "Регистрация"}, "label": {"email": "E-mail", "phone": "Телефон", "pwd": "Пароль", "snils": "СНИЛС"}, "msg": {"info": "Для доступа к&nbsp;системам и&nbsp;сервисам Электронного правительства вам нужно пройти авторизацию.", "loading": "Загрузка ..."}, "noDS": {"text": "В&nbsp;данную систему можно войти только с&nbsp;помощью электронной подписи или карты УЭК. <br />Ваше&nbsp;интернет-устройство&nbsp;не&nbsp;позволяет&nbsp; использовать средство электронной подписи."}, "onlyDS": {"text": "В&nbsp;данную систему можно войти только с&nbsp;помощью электронной подписи или карты УЭК. <br />Вы&nbsp;не&nbsp;можете использовать пароль своей учетной записи."}, "page": {"title": "Авторизация"}, "title": {"alternatives": "Войти при помощи", "info": "Необходима авторизация", "main": "Вход"}}, "error": {"certificate": {"invalid": "Электронная подпись недействительна. Попробуйте еще раз. Если ошибка сохранилась, пожалуйста, обратитесь в организацию, где было получено ваше средство электронной подписи.", "unknown": "Вы используете недопустимое средство электронной подписи", "user": {"not": {"found": "Учетная запись, соответствующая данному средству электронной подписи, не&nbsp;зарегистрирована. <a href='/registration' class='nowrap'>Перейти к&nbsp;регистрации</a>", "match": "Учетная запись, соответствующая данному средству электронной подписи, зарегистрирована на пользователя с другой фамилией, именем или отчеством"}}}, "invalidCredentials": "Введено неверное имя пользователя или&nbsp;пароль", "otp": {"invalid": "Введен некорректный код подтверждения для использования усиленной аутентификации"}, "signature": {"invalid": "Электронная подпись не прошла проверку. Попробуйте еще раз. Если ошибка сохранилась, пожалуйста, обратитесь в организацию, где было получено ваше средство электронной подписи."}, "simds": {"certificate": {"expired": "Сертификат мобильной электронной подписи просрочен или не вступил в действие. Запрос на вход не может быть подписан данным абонентом."}, "internal": {"error": "Возникла ошибка при вызове сервиса мобильной электронной подписи."}, "msisdn": {"unknown": "Указанный телефонный номер не поддерживает мобильную электронную подпись."}, "no": {"answer": "Не получен ответ от абонента"}}, "unknown": "Неизвестная ошибка"}, "header": {"msg": {"inRussian": "в России:", "outsideOfRussian": "за границей:", "supportPhone": "Телефоны поддержки:"}, "phone": {"inRussian": "8 (800) 100-70-10", "outsideOfRussian": "+7 (499) 550-18-39"}}, "info": {"action": {"logout": "Войти заново", "make": {"trusted": "Подтвердить личность"}}, "header": {"another": {"role": {"required": "Доступ невозможен: ваша роль не поддерживается"}}, "ds": {"required": "Доступ невозможен: необходим вход по электронной подписи"}, "no": {"roles": {"to": {"select": "Доступ невозможен: у вас нет подходящей роли"}}}, "trusted": {"required": "Доступ невозможен: необходимо подтвердить личность"}}, "msg": {"another": {"role": {"required": "<p>Ранее вы&nbsp;выбрали следующую роль при работе с&nbsp;системами электронного правительства:</p><ul class='list list-check'><li>{1}</l></ul><p>Вы&nbsp;пытаетесь получить доступ к&nbsp;системе <b>&laquo;{0}&raquo;</b>.</p><p>Эта система поддерживает следующие роли:</p>"}}, "ds": {"required": "<p>Система, к&nbsp;которой вы&nbsp;обращаетесь, требует от&nbsp;вас входа с&nbsp;использованием средства квалифицированной электронной подписи.</p><p>Средство электронной подписи можно получить в&nbsp;аккредитованном удостоверяющем центре. Актуальный список центров публикуется на&nbsp;сайте <a href='http://minsvyaz.ru/' target='_blank'>Минкомсвязи России</a>.</p><p>Если у&nbsp;вас уже имеется средство электронной подписи, войдите заново, использовав это средство.</p>"}, "no": {"roles": {"to": {"select": "<p>Система, к&nbsp;которой вы&nbsp;обращаетесь, требует подтверждения вашей личности.</p><p>Чтобы получить доступ к&nbsp;этой системе и&nbsp;ее&nbsp;услугам, пройдите процедуру подтверждения личности.</p><p>После этого вы&nbsp;сможете осуществить вход в&nbsp;эту систему.</p>"}}}, "trusted": {"required": "<p>Система, к&nbsp;которой вы&nbsp;обращаетесь, требует подтверждения вашей личности.</p><p>Чтобы получить доступ к&nbsp;этой системе и&nbsp;ее&nbsp;услугам, пройдите процедуру подтверждения личности.</p><p>После этого вы&nbsp;сможете осуществить вход в&nbsp;эту систему.</p>"}}, "org": {"type": {"A": "Орган государственной власти", "B": "Индивидуальный предприниматель", "L": "Юридическое лицо"}}, "role": {"A": {"info": "Для доступа к&nbsp;системе от&nbsp;имени органа государственной власти необходимо быть должностным лицом органа государственной власти.", "logout": "Для доступа к&nbsp;системе от&nbsp;имени органа государственной власти требуется войти заново."}, "B": {"info": "Для доступа к&nbsp;системе от&nbsp;имени индивидуального предпринимателя необходимо зарегистрировать учетную запись&nbsp;ИП или присоединиться к&nbsp;ИП в&nbsp;качестве сотрудника.", "logout": "Для доступа к&nbsp;системе от&nbsp;имени индивидуального предпринимателя требуется войти заново.", "make": {"trusted": "Для доступа к&nbsp;системе от&nbsp;имени индивидуального предпринимателя (ИП) необходимо подтвердить свою учетную запись и&nbsp;зарегистрировать учетную запись&nbsp;ИП или присоединиться к&nbsp;ИП в&nbsp;качестве сотрудника."}}, "L": {"info": "Для доступа к&nbsp;системе от&nbsp;имени юридического лица необходимо присоединиться к&nbsp;учетной записи юридического лица в&nbsp;качестве сотрудника.", "logout": "Для доступа к&nbsp;системе от&nbsp;имени юридического лица требуется войти заново.", "make": {"trusted": "Для доступа к&nbsp;системе от&nbsp;имени юридического лица необходимо подтвердить свою учетную запись и&nbsp;присоединиться к&nbsp;учетной записи юридического лица в&nbsp;качестве сотрудника."}}}, "roleList": {"head": {"desc": "Описание", "role": "Роль"}}, "user": {"role": {"A": "<b>{0}</b>, должностное лицо", "B": "<b>{0}</b>, индивидуальный предприниматель", "L": "<b>{0}</b>, сотрудник", "P": "<b>{0}</b>, физическое лицо", "not": {"trusted": "<b>{0}</b>, неподтвержденная учетная запись"}}}}, "simds": {"book": {"button": {"close": "Отмена", "continue": "Продолжить"}, "msg": {"info": "На указанный номер телефона будет выслан запрос на вход в систему, который должен быть подписан вашей мобильной электронной подписью.", "mobile": {"input": "Введите номер вашего мобильного телефона, sim-карта которого позволяет ставить электронную подпись"}}}, "get": {"button": {"close": "Отменить вход"}, "msg": {"info1": "На&nbsp;номер <b>{0}</b> выслан запрос <b>&#8470;&nbsp;{1}</b> на&nbsp;вход в&nbsp;систему.", "info2": "Скоро на&nbsp;мобильном телефоне вы&nbsp;увидите сообщение и&nbsp;запрос на&nbsp;ввод пин-кода. Убедитесь, что вам пришел запрос именно с&nbsp;уникальным номером <b>{0}</b>, и&nbsp;подпишите его своей электронной подписью.", "info3": "Не&nbsp;закрывайте это окно, вход в&nbsp;систему будет автоматически осуществлен сразу после проверки вашей электронной подписи."}}, "title": "Вход с помощью средства мобильной электронной подписи"}, "system": {"title": "Единая система идентификации и аутентификации"}, "validation": {"msg": {"email": {"empty": "Не указан e-mail", "invalid": "E-mail введен в неверном формате. Он может содержать только буквы английского алфавита, цифры и символы «@»,«.»,«_»."}, "phone": {"empty": "Не указан мобильный телефон", "invalid": "Номер мобильного телефона введен в неверном формате. Вы должны ввести 10 цифр."}, "pwd": {"empty": "Не указан пароль"}, "snils": {"empty": "Не указан СНИЛС", "invalid": "СНИЛС введен в неверном формате. Он должен состоять из 11 цифр."}}}}};
+        var dsWidget;
+        var loginViewModel;
+        var simDsViewModel;
+        $(document).ready(function () {
+            // Activates knockout.js
+            loginViewModel = new LoginViewModel('', '15a99f8c-7e91-430b-b34c-32db0ba967f0', 'null', 'null', false);
+            ko.applyBindings(loginViewModel, document.getElementById("content"));
+            //  bind handler for login event
+            $('#password').bind('keyup', function (e) {
+                if (e.which == 13 || e.keyCode == 13) {
+                    loginViewModel.loginByPwd();
+                }
+            });
+            //  set mask for input fields
+//            jQuery(function ($) {
+//                $("#snils").mask("999-999-999 99");
+//
+//                $("#phone").mask("+7(999) 999-99-99");
+//            });
+            var custom_options = {
+                exclude_etk: false,
+                language: 'ru'
+            };
+
+            dsWidget = ds_widget(custom_options);
+
+
+        });
+    </script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($('#saveId').prop("checked")) {
+                $("label[for='saveId']").addClass('label-checked');
+            }
+            $("label[for='saveId']").bind('click', function () {
+                $(this).toggleClass('label-checked');
+            })
+        });
+    </script>
+    <![endif]-->
+
+
+    <script type="text/html" id="msg-template">
+        <div class="ui-message-error">
+            <span class="ui-message-error-detail" data-bind="html: $data"></span>
+        </div>
+    </script>
+
+    <script type="text/html" id="id-label-template">
+        <label data-bind=" attr: { data: typ }, click: $root.changeId, css: {'active':  $root.index() == id }, text: nam"></label>
+    </script>
+
+    <script type="text/html" id="id-input-template">
+        <input class="ui-inputfield" data-bind="attr: { id: typ }, visible: $root.index() == id, value: val"/>
+
+        <div class="field-error"
+             data-bind="visible: ($root.index() == id) && msgVisible, template: {'if': msg != '', name: 'msg-template', data: msg }"></div>
+    </script>
+
+
+</head>
+<body class="ru has-toolbar">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<div class="wrapper">
+
+
+<div class="toolbar-wrap">
+
+   <div class="langbar">
+        <a href="javascript: setLanguage('ru'); location.reload();" class="lang ru first" title="Русский">
+            <i class="icon">Русский</i>
+        </a>
+        <a href="javascript: setLanguage('en'); location.reload();" class="lang en" title="English">
+            <i class="icon">English</i>
+        </a>
+        <a href="javascript: setLanguage('de'); location.reload();" class="lang de" title="Deutsch">
+            <i class="icon">Deutsch</i>
+        </a>
+        <a href="javascript: setLanguage('fr'); location.reload();" class="lang fr" title="Français">
+            <i class="icon">Français</i>
+        </a>
+    </div>
+
+</div>
+<!-- end .toolbar-wrap -->
+
+
+<div class="header">
+    <div class="bg-right">
+        <div class="bg-left"></div>
+    </div>
+    <div class="bg-fade">
+
+        <a class="logo" title="">Единая система идентификации и аутентификации</a>
+
+        <div class="login-info"></div>
+
+        <div class="phone">
+            <h5>Телефоны поддержки:</h5>
+            <ul class="phones">
+                <li><em>в России:</em><strong>8 (800) 100-70-10</strong></li>
+                <li><em>за границей:</em><strong>+7 (499) 550-18-39</strong></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- end .bg-fade -->
+</div>
+<!-- end .header -->
+
+<div class="message-block esia-globalNotification">
+</div>
+<!-- end .message-block -->
+
+<div id="content" class="content">
+    <div class="content-t">
+        <div></div>
+    </div>
+    <div class="content-c">
+        <div class="simple-cover authn-cover">
+
+            <div class="column-right">
+
+                <h1 class="page-title">
+                    <!--<a href="https://esia.gosuslugi.ru/registration/" class="goto-reg">Регистрация</a>-->
+                    Вход
+                </h1>
+
+
+                <form id="login" method="post" action="j_security_check">
+                    <div class="data-form data-form-authn">
+
+                        <dl class="login">
+                            <dt>
+                            <label for="username" class="active">Логин</label>
+                                </dt>
+                            <input class="ui-inputfield" id="username" name="j_username" type="text" value="">
+                        </dl>
+
+                        <dl class="password">
+                            <dt>
+                                <label>Пароль</label>
+                            </dt>
+                            <dd>
+                                <input id="password" name="j_password" type="password" class="ui-inputfield ui-inputtext"
+                                       data-bind="value: pwd.val">
+
+                                <div class="field-error"
+                                     data-bind="visible: pwd.msgVisible, template: {&#39;if&#39;: pwd.msg != &#39;&#39;, name: &#39;msg-template&#39;, data: pwd.msg }"
+                                     style="display: none;">
+                                    <div class="ui-message-error">
+                                        <span class="ui-message-error-detail" data-bind="html: $data"></span>
+                                    </div>
+                                </div>
+                                <!--<input id="username" name="username" type="hidden">-->
+                                <!--<input id="idType" name="idType" type="hidden">-->
+                            </dd>
+                        </dl>
+
+                        <ul class="check-list">
+                            <li>
+                                <input id="saveId" name="saveId" type="checkbox"
+                                       data-bind="checked: saveId, click: $root.clearIdCookieWhenUnchecked"><label
+                                    for="saveId">Запомнить меня</label>
+                            </li>
+                        </ul>
+
+                        <dl class="line-error">
+                            <dd>
+                                <div class="field-error"
+                                     data-bind="visible: error.msgVisible, template: {&#39;if&#39;: error.msg != &#39;&#39;, name: &#39;msg-template&#39;, data: error.msg }"
+                                     style="display: none;">
+                                    <div class="ui-message-error">
+                                        <span class="ui-message-error-detail" data-bind="html: $data"></span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+
+                        <dl class="button-authn">
+                            <button id="authnBtn" name="authnBtn" data-bind="click: loginByPwd"
+                                    class="ui-button ui-button-text-only button-big" type="button">
+                                <span class="ui-button-text">Войти</span>
+                            </button>
+                        </dl>
+
+                        <a href="https://esia.gosuslugi.ru/recovery" class="fail-login">Не удается войти?</a>
+
+                    </div>
+                </form>
+
+
+                <!--<div class="login-alternative">-->
+                    <!--<h5 class="title">Войти при помощи</h5>-->
+                    <!--<ul class="login-list">-->
+
+
+                        <!--<li>-->
+                            <!--<i class="icon eds"></i>-->
+                            <!--<a href="javascript: loginViewModel.loginByDs();">Средства электронной подписи</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<i class="icon uec"></i>-->
+                            <!--<a href="javascript: loginViewModel.loginByDs();">Универсальной электронной карты</a>-->
+                        <!--</li>-->
+
+
+                        <!--<form id="dsFrm" method="post" action="https://esia.gosuslugi.ru/idp/authn/DSLogin">-->
+                            <!--<input id="challenge" name="challenge" type="hidden">-->
+                            <!--<input id="signature" name="signature" type="hidden">-->
+                        <!--</form>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!-- end .login-alternative -->
+
+
+            </div>
+            <!-- end .column-right -->
+
+            <div class="column-left">
+                <h1 class="page-title">Необходима авторизация</h1>
+
+                <div class="content-styles">
+                    <p class="big">
+                        Для доступа к&nbsp;системам и&nbsp;сервисам Электронного правительства вам нужно пройти
+                        авторизацию.
+                    </p>
+                </div>
+            </div>
+            <!-- end .column-left -->
+
+        </div>
+        <!-- end .simple-cover -->
+    </div>
+    <!-- end .content-c -->
+    <div class="content-b">
+        <div></div>
+    </div>
+</div>
+<!-- end .content -->
+
+<div class="footer">
+    <div class="logo-dept">
+        <span class="mks"></span>
+        <span class="rtk"></span>
+    </div>
+</div>
+<!-- end .footer -->
+
+</div>
+<!-- end .wrapper -->
+
+<div id="dialogLoading" class="ui-dialog ui-widget dialog-loading">
+    <div class="ui-dialog-content ui-widget-content">
+        <p class="dialog-loading-msg">Загрузка ...</p>
+        <img src="img/ajax-loader.gif" alt="">
+    </div>
+</div>
+</body>

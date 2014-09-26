@@ -86,6 +86,7 @@ public class FileConfiguration implements SAMLConfiguration {
             log.info(Constants.INIT_OIOSAML_NAME + " was not defined in web.xml.");
 
         // Read in path to configuration library
+	    //todo old  - String homeParam = SystemConfiguration.getHomeDirByWebXml();
         String homeParam = SystemConfiguration.getHomeDirByJNDI();
         if(homeParam != null)
             log.info(Constants.INIT_OIOSAML_HOME + " set to " + homeParam + " in web.xml");

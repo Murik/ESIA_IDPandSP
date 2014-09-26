@@ -1,0 +1,60 @@
+/*
+                base-page.css
+*/
+a img {
+    border: none;
+}
+
+
+
+/*
+                base-components.css & theme.css
+*/
+
+/*              shadow              */
+.ui-widget-overlay,
+.window-overlay {
+    filter: alpha(opacity = 30);
+}
+
+/*              Pager               */
+.pager-block .pager-arrow {
+    margin-bottom: 1px;
+}
+.pager-block .pager-arrow .pager-icon {
+    background-color: #fff;
+}
+/* hover */
+.pager-block .pager-arrow:hover {
+    box-shadow: none;
+    border: 1px solid #93afc9;
+    margin: -1px 2px 0;
+}
+.pager-block .pager-arrow.first:hover {
+    margin-right: 19px;
+}
+.pager-block .pager-arrow.last:hover {
+    margin-left: 19px;
+}
+/* disabled */
+.pager-block .pager-arrow.disabled {
+    filter: alpha(opacity = 50);
+    border-color: #fff !important;
+}
+
+/*              radio & checkbox                */
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+
+
+
+/*
+                login
+*/
+.data-form-authn .check-list label.label-checked {
+    background-position: -77px -178px;
+}

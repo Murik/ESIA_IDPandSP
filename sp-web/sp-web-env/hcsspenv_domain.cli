@@ -1,0 +1,6 @@
+# Check if exist
+if (outcome!=success) of /profile=full-ha/subsystem=naming/binding=java\:global\/oiosaml-j.home:read-resource
+
+#add homeDir value to sp-web
+/profile=full-ha/subsystem=naming/binding=java\:global\/oiosaml-j.home:add(binding-type=simple,  value=${homeDir})
+end-if

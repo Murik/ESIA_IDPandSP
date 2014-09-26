@@ -8,7 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/oiosaml.java-11442/oiosaml-sp.iml" filepath="$PROJECT_DIR$/oiosaml.java-11442/oiosaml-sp.iml" />
       <module fileurl="file://$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider/shibboleth-identityprovider.iml" filepath="$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider/shibboleth-identityprovider.iml" />
       <module fileurl="file://$PROJECT_DIR$/Shiboleth/shibboleth-parent/shibboleth-parent.iml" filepath="$PROJECT_DIR$/Shiboleth/shibboleth-parent/shibboleth-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sp-test/sp-web.iml" filepath="$PROJECT_DIR$/sp-test/sp-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sp-web/sp-web.iml" filepath="$PROJECT_DIR$/sp-web/sp-web.iml" />
     </modules>
   </component>
 </project>

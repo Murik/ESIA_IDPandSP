@@ -1,0 +1,26 @@
+.dialog-edsdlg{width:700px!important;}
+.dialog-edsdlg .content-eds{background:#fff;border:1px solid #93afc9;border-radius:3px;padding:20px 20px 15px;}
+.dialog-edsdlg .content-eds .eds-message.bg-eds{background-position:center bottom;background-repeat:no-repeat;padding-bottom:100px;}
+.dialog-edsdlg .content-eds .eds-message p{font-size:13px;line-height:17px;padding-bottom:10px;}
+.dialog-edsdlg .content-eds .eds-message ol{margin-left:20px;}
+.dialog-edsdlg .content-eds .eds-message ol li{font-size:13px;padding-bottom:10px;}
+.dialog-edsdlg .content-eds .eds-message .msg-title{font-size:14px;}
+.dialog-edsdlg .content-eds .eds-info .line{display:block;font-size:13px;line-height:normal;padding-bottom:8px;}
+.dialog-edsdlg .content-eds .eds-info .fio{font-size:14px;}
+.dialog-edsdlg .content-eds .eds-info .label{color:#505961;}
+.dialog-edsdlg .eds-select-dlg .eds-process{font-size:14px;}
+.dialog-edsdlg .eds-select-dlg .eds-process .title{color:#004990;font-weight:700;padding-bottom:15px;text-align:center;}
+.dialog-edsdlg .eds-select-dlg .eds-process .descr{padding-bottom:20px;}
+.dialog-edsdlg .eds-select-dlg .eds-process .wait{padding-bottom:110px;text-align:center;}
+.dialog-edsdlg .eds-select-dlg .eds-process .ajax-loader-bg{background-position:center 40px;}
+.dialog-edsdlg .content-eds .eds-message .eds-info-pincode{padding:10px 25px 20px;}
+.dialog-edsdlg .content-eds .data-form-pincode.horizontal dt{text-align:left;width:60px;}
+.dialog-edsdlg .content-eds .data-form-pincode.horizontal dd{margin-left:80px;}
+.dialog-edsdlg .content-eds .data-form-pincode dd input.ui-inputfield{width:120px;}
+.dialog-edsdlg .content-eds .data-form-pincode.horizontal dd .button-cmd{top:-7px;left:6px;}
+.dialog-edsdlg .eds-pin-code-dlg .buttons-group.dialog{padding-left:125px;}
+.dialog-edsdlg .eds-insert-plugin-dlg .buttons-group.dialog{padding-left:125px;}
+.dialog-edsdlg .content-eds .data-form-mobile{width:550px;}
+.dialog-edsdlg .content-eds .data-form-mobile dd .ui-inputfield{width:275px;}
+.dialog-edsdlg .sim-ds-book-dlg .buttons-group.dialog{padding-left:125px;}
+.dialog-edsdlg .sim-ds-get-dlg .ajax-loader-bg{background-position:center center;height:66px;padding:20px 0;}

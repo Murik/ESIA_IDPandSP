@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor entityID="http://idp.hcs-dev.ru:8080/idp/shibboleth"
+                  xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+                  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                  xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <IDPSSODescriptor
+            protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">hcs-dev.ru</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIIDJDCCAgygAwIBAgIVAJjyg8Sgt0xYQe+Vme+6SH226nM/MA0GCSqGSIb3DQEB
+                        BQUAMBkxFzAVBgNVBAMTDmlkcC5oY3MtZGV2LnJ1MB4XDTE0MDUyMTA4MjA0N1oX
+                        DTM0MDUyMTA4MjA0N1owGTEXMBUGA1UEAxMOaWRwLmhjcy1kZXYucnUwggEiMA0G
+                        CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChwEo/Y+rGPe5xn4zMW8rqMkpY5zbR
+                        jzJbU9lrr+SZuhK45+y4b8sm91kw1WerFDFvfly8dnbLtBoDe2w6zYi36IZpWMYU
+                        nKhxM1KyOcBNTJ60ALKSnui0FsIdkyhGXaTd6wOVgIXNmRJERGpgdZVxSHnWko0n
+                        R3JnTJCbILQizluIf4gzeMFK6Mud5UQqAdpdRH/xlPnXHPvYIGgMzNF9HwgttZjn
+                        4v2K4Vl4iUQIpfuMpFdwn/3buaFwYAOXs/7wcyK2Fw+PMb+KsOa56k52nGWsGiVK
+                        WXxikK1QP9tyKBVos+d+D88xgEIgJoaEfmvg6GRO+u+Oo4s9PniATqBZAgMBAAGj
+                        YzBhMEAGA1UdEQQ5MDeCDmlkcC5oY3MtZGV2LnJ1hiVodHRwczovL2lkcC5oY3Mt
+                        ZGV2LnJ1L2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBQlNOH9QQHLB41r/J7VsHPO
+                        4lfPuzANBgkqhkiG9w0BAQUFAAOCAQEAlBqj/rMCBhKxRHD8F5mtsg71PritpmID
+                        sDu6SmRN+ImH0cVgdUHwO9cUt0unMjSzWDxe43hlJXi49pP4vI+9z2xqnWRT4ZpP
+                        rUecTUij00Ymom+FfPvAO95dzc2G/NsSPBFU5Ea9xsmnjom7xNAUA/Otr9HzHMPG
+                        z026UliS13yPorTKfP23jiTT9YUwnXEu0QWmy+8IoZosEc7xzStONT4ORbHBZ6kP
+                        k5ksHvbhz8FBRLH/6ZIY+ewhGZ/MeP/NEsRGwNAUZ98y6x+7RuueHR254ms9dGIu
+                        tkFjvWWciL/esVQgwOeSPS2qRwEeD2dyobP7dwvEHdrbjY/zzKJe2g==
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                                   Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML1/SOAP/ArtifactResolution"
+                                   index="1"/>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                                   Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/SOAP/ArtifactResolution"
+                                   index="2"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                             Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/Redirect/SLO"
+                             ResponseLocation="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/Redirect/SLO"/>
+        <!--<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"-->
+        <!--Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/POST/SLO"-->
+        <!--ResponseLocation="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/POST/SLO"/>-->
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                             Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/SOAP/SLO"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest"
+                             Location="https://idp.hcs-dev.ru:808/idp/profile/Shibboleth/SSO" />
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                             Location="https://idp.hcs-dev.ru:808/idp/profile/SAML2/POST/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
+                             Location="https://idp.hcs-dev.ru:808/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                             Location="https://idp.hcs-dev.ru:808/idp/profile/SAML2/Redirect/SSO" />
+    </IDPSSODescriptor>
+
+    <AttributeAuthorityDescriptor
+            protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">hcs-dev.ru</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIIDJDCCAgygAwIBAgIVAJjyg8Sgt0xYQe+Vme+6SH226nM/MA0GCSqGSIb3DQEB
+                        BQUAMBkxFzAVBgNVBAMTDmlkcC5oY3MtZGV2LnJ1MB4XDTE0MDUyMTA4MjA0N1oX
+                        DTM0MDUyMTA4MjA0N1owGTEXMBUGA1UEAxMOaWRwLmhjcy1kZXYucnUwggEiMA0G
+                        CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChwEo/Y+rGPe5xn4zMW8rqMkpY5zbR
+                        jzJbU9lrr+SZuhK45+y4b8sm91kw1WerFDFvfly8dnbLtBoDe2w6zYi36IZpWMYU
+                        nKhxM1KyOcBNTJ60ALKSnui0FsIdkyhGXaTd6wOVgIXNmRJERGpgdZVxSHnWko0n
+                        R3JnTJCbILQizluIf4gzeMFK6Mud5UQqAdpdRH/xlPnXHPvYIGgMzNF9HwgttZjn
+                        4v2K4Vl4iUQIpfuMpFdwn/3buaFwYAOXs/7wcyK2Fw+PMb+KsOa56k52nGWsGiVK
+                        WXxikK1QP9tyKBVos+d+D88xgEIgJoaEfmvg6GRO+u+Oo4s9PniATqBZAgMBAAGj
+                        YzBhMEAGA1UdEQQ5MDeCDmlkcC5oY3MtZGV2LnJ1hiVodHRwczovL2lkcC5oY3Mt
+                        ZGV2LnJ1L2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBQlNOH9QQHLB41r/J7VsHPO
+                        4lfPuzANBgkqhkiG9w0BAQUFAAOCAQEAlBqj/rMCBhKxRHD8F5mtsg71PritpmID
+                        sDu6SmRN+ImH0cVgdUHwO9cUt0unMjSzWDxe43hlJXi49pP4vI+9z2xqnWRT4ZpP
+                        rUecTUij00Ymom+FfPvAO95dzc2G/NsSPBFU5Ea9xsmnjom7xNAUA/Otr9HzHMPG
+                        z026UliS13yPorTKfP23jiTT9YUwnXEu0QWmy+8IoZosEc7xzStONT4ORbHBZ6kP
+                        k5ksHvbhz8FBRLH/6ZIY+ewhGZ/MeP/NEsRGwNAUZ98y6x+7RuueHR254ms9dGIu
+                        tkFjvWWciL/esVQgwOeSPS2qRwEeD2dyobP7dwvEHdrbjY/zzKJe2g==
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                          Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML1/SOAP/AttributeQuery"/>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                          Location="http://idp.hcs-dev.ru:8080/idp/profile/SAML2/SOAP/AttributeQuery"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+    </AttributeAuthorityDescriptor>
+
+</EntityDescriptor>

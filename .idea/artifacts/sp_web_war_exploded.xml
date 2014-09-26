@@ -1,8 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="sp-web:war exploded">
-    <output-path>$PROJECT_DIR$/sp-test/target/sp-web</output-path>
+    <output-path>$PROJECT_DIR$/sp-web/target/sp-web</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="sp-web/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="sp-web" />
@@ -53,6 +52,7 @@
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.12" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="sp-web/web/Web" />
     </root>
   </artifact>
 </component>

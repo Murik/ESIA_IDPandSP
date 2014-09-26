@@ -5,7 +5,10 @@
     <file url="file://$PROJECT_DIR$/Shiboleth/libs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Shiboleth/shibboleth-identityprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Shiboleth/shibboleth-parent" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sp-test/sp-web-env" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/idp-web/src/main/resources/idp/metadata/SPMetadataDEV.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sp-web/sp-web-env" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sp-web/src/main/resources/oiosaml.java-config/metadata/SP/SPMetadataDEV.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sp-web/src/main/webapp/WEB-INF/jboss-web.xml" charset="UTF-8" />
   </component>
 </project>
 

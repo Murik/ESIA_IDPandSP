@@ -7,10 +7,13 @@
 <html>
 
 <body>
-	<img src="<%= request.getContextPath() %>/images/logo.jpg" />
+	<img src="<%= request.getContextPath()%>/images/dummylogo.png" alt="Replace or remove this logo"/>
 	<h3>ERROR</h3>
-	<% if (error != null){%>
-	Error Message: <%= error.getMessage() %>
+	<%
+	if (error != null) {
+	    org.owasp.esapi.Encoder esapiEncoder = org.owasp.esapi.ESAPI.encoder();
+	%>
+	Error Message: <%= esapiEncoder.encodeForHTML(error.getMessage()) %>
 	<% } %>
 </body>
 
